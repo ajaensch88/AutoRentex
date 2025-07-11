@@ -54,6 +54,20 @@
         <p>© 2025 AutoRentex · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
     </footer>
 
+    <script>
+        // Rechtsklick blockieren
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Tasten wie F12, Strg+U, Strg+Shift+I blockieren
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's')) {
+                e.preventDefault();
+            }
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+            }
+        });
+    </script>
 
 
 </body>
